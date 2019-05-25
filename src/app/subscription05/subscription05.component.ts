@@ -1,5 +1,6 @@
 import { Component, OnInit, OnDestroy, ChangeDetectionStrategy } from '@angular/core';
 import { Observable } from 'rxjs';
+import { tap } from 'rxjs/operators';
 import { TimerService } from '../services/timer.service';
 
 @Component({
@@ -16,7 +17,10 @@ export class Subscription05Component implements OnInit, OnDestroy {
 
   ngOnInit() {
     console.log('Initialized');
-    this.result$ = this.timerService.initTimer();
+    this.result$ = this.timerService.initTimer()
+      .pipe(tap(x => {
+        console.log(x);
+      }));
   }
 
   ngOnDestroy() {

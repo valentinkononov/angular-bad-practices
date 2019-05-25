@@ -3,6 +3,7 @@
     "codelyzer"
   ],
   "rules": {
+    "rxjs-no-ignored-subscribe": true,
     "arrow-return-shorthand": true,
     "callable-types": true,
     "class-name": true,

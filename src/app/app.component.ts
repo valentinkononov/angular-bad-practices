@@ -34,4 +34,8 @@ export class AppComponent {
   navigateSubscription05() {
     this.router.navigate(['subscription05']);
   }
+
+  navigateIterate03() {
+    this.router.navigate(['iterate03']);
+  }
 }

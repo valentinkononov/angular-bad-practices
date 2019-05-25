@@ -6,6 +6,7 @@ import { Subscription02Component } from './subscription02/subscription02.compone
 import { Subscription03Component } from './subscription03/subscription03.component';
 import { Subscription04Component } from './subscription04/subscription04.component';
 import { Subscription05Component } from './subscription05/subscription05.component';
+import { Iterate03Component } from './iterate03/iterate03.component';
 
 const routes: Routes = [
   {
@@ -31,6 +32,10 @@ const routes: Routes = [
   {
     path: 'subscription05',
     component: Subscription05Component,
+  },
+  {
+    path: 'iterate03',
+    component: Iterate03Component,
   },
 ];
 

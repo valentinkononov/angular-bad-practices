@@ -19,10 +19,11 @@ export class Subscription04Component implements OnInit, OnDestroy {
     console.log('Initialized');
     this.timerService.initTimer()
       .pipe(takeUntil(this.unsubscribe))
-      .subscribe(x => {
-        this.result = x;
-        console.log(x);
-      });
+      .subscribe();
+      // .subscribe(x => {
+      //   this.result = x;
+      //   console.log(x);
+      // });
   }
 
   ngOnDestroy() {

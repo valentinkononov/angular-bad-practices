@@ -3,28 +3,32 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AnyComponent } from './any/any.component';
-import { Subscription01Component } from './subscription01/subscription01.component';
-import { Subscription02Component } from './subscription02/subscription02.component';
-import { Subscription03Component } from './subscription03/subscription03.component';
-import { Subscription04Component } from './subscription04/subscription04.component';
-import { Subscription05Component } from './subscription05/subscription05.component';
+import { AnyComponent } from './samples/any.component';
+import { V01_subscribe_onlyComponent } from './samples/subscriptions/v01_subscribe_only.component';
+import { V02_unsubscribeComponent } from './samples/subscriptions/v02_unsubscribe.component';
+import { V03_take_whileComponent } from './samples/subscriptions/v03_take_while.component';
+import { V04_take_untilComponent } from './samples/subscriptions/v04_take_until.component';
+import { V05_async_pipeComponent } from './samples/subscriptions/v05_async_pipe.component';
+import { V06_until_destroyedComponent } from './samples/subscriptions/v06_until_destroyed.component';
 import { TimerService } from './services/timer.service';
-import { ImportCheckComponent } from './import-check/import-check.component';
-import { Iterate03Component } from './iterate03/iterate03.component';
-import { IterateItemComponent } from './iterate-item/iterate-item.component';
-import { ExpandableComponent } from './expandable/expandable.component';
+import { ImportCheckComponent } from './samples/import-check.component';
+import { Iterate03Component } from './samples/iterate/iterate03.component';
+import { IterateItemComponent } from './samples/iterate/iterate-item.component';
+import { ExpandableComponent } from './samples/iterate/expandable.component';
 import { LabelPipe } from './pipes/label.pipe';
+import {HomeComponent} from './samples/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    HomeComponent,
     AnyComponent,
-    Subscription01Component,
-    Subscription02Component,
-    Subscription03Component,
-    Subscription04Component,
-    Subscription05Component,
+    V01_subscribe_onlyComponent,
+    V02_unsubscribeComponent,
+    V03_take_whileComponent,
+    V04_take_untilComponent,
+    V05_async_pipeComponent,
+    V06_until_destroyedComponent,
     ImportCheckComponent,
     ImportCheckComponent,
     Iterate03Component,

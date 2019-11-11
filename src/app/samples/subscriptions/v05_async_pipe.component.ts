@@ -1,15 +1,22 @@
 import { Component, OnInit, OnDestroy, ChangeDetectionStrategy } from '@angular/core';
 import { Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
-import { TimerService } from '../services/timer.service';
+import { TimerService } from '../../services/timer.service';
 
 @Component({
   selector: 'app-subscription05',
-  templateUrl: './subscription05.component.html',
-  styleUrls: ['./subscription05.component.scss'],
+  template: `
+      <p>
+          <strong>Async Pipe</strong>
+          Suggested way, no boilerplate code, works as expetced. Potential problems - usage in several template places
+      </p>
+      <div>
+          Subscription result: {{ result$ | async }}
+      </div>
+  `,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class Subscription05Component implements OnInit, OnDestroy {
+export class V05_async_pipeComponent implements OnInit, OnDestroy {
 
   result$: Observable<number>;
 

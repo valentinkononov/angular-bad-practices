@@ -1,37 +1,51 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { AnyComponent } from './any/any.component';
-import { Subscription01Component } from './subscription01/subscription01.component';
-import { Subscription02Component } from './subscription02/subscription02.component';
-import { Subscription03Component } from './subscription03/subscription03.component';
-import { Subscription04Component } from './subscription04/subscription04.component';
-import { Subscription05Component } from './subscription05/subscription05.component';
-import { Iterate03Component } from './iterate03/iterate03.component';
+import { AnyComponent } from './samples/any.component';
+import { V01_subscribe_onlyComponent } from './samples/subscriptions/v01_subscribe_only.component';
+import { V02_unsubscribeComponent } from './samples/subscriptions/v02_unsubscribe.component';
+import { V03_take_whileComponent } from './samples/subscriptions/v03_take_while.component';
+import { V04_take_untilComponent } from './samples/subscriptions/v04_take_until.component';
+import { V05_async_pipeComponent } from './samples/subscriptions/v05_async_pipe.component';
+import { V06_until_destroyedComponent } from './samples/subscriptions/v06_until_destroyed.component';
+import { Iterate03Component } from './samples/iterate/iterate03.component';
+import { HomeComponent } from './samples/home.component';
 
 const routes: Routes = [
+  {
+    path: '*',
+    redirectTo: 'home',
+  },
+  {
+    path: 'home',
+    component: HomeComponent,
+  },
   {
     path: 'any',
     component: AnyComponent,
   },
   {
-    path: 'subscription01',
-    component: Subscription01Component,
+    path: 'v01_subscribe_only',
+    component: V01_subscribe_onlyComponent,
   },
   {
-    path: 'subscription02',
-    component: Subscription02Component,
+    path: 'v02_unsubscribe',
+    component: V02_unsubscribeComponent,
   },
   {
-    path: 'subscription03',
-    component: Subscription03Component,
+    path: 'v03_take_while',
+    component: V03_take_whileComponent,
   },
   {
-    path: 'subscription04',
-    component: Subscription04Component,
+    path: 'v04_take_until',
+    component: V04_take_untilComponent,
   },
   {
-    path: 'subscription05',
-    component: Subscription05Component,
+    path: 'v05_async_pipe',
+    component: V05_async_pipeComponent,
+  },
+  {
+    path: 'v06_until_destroyed',
+    component: V06_until_destroyedComponent,
   },
   {
     path: 'iterate03',

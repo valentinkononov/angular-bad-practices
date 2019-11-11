@@ -6,8 +6,11 @@ export interface Movie {
 
 @Component({
   selector: 'app-any',
-  templateUrl: './any.component.html',
-  styleUrls: ['./any.component.scss']
+  template: `
+      <p>
+          {{ movie.name }}
+      </p>
+  `,
 })
 export class AnyComponent implements OnInit {
 

@@ -1,14 +1,21 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
-import { TimerService } from '../services/timer.service';
+import { TimerService } from '../../services/timer.service';
 
 @Component({
   selector: 'app-subscription04',
-  templateUrl: './subscription04.component.html',
-  styleUrls: ['./subscription04.component.scss']
+  template: `
+      <p>
+          <strong>Take Until</strong>
+          Cool rxjs way to unsubscribe. Issue is boilerplate code for it.
+      </p>
+      <div>
+          Subscription result: {{ result }}
+      </div>
+  `,
 })
-export class Subscription04Component implements OnInit, OnDestroy {
+export class V04_take_untilComponent implements OnInit, OnDestroy {
 
   result = 0;
   unsubscribe: Subject<void> = new Subject();

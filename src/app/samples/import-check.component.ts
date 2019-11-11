@@ -4,8 +4,11 @@ import { TimerService } from '../services/timer.service';
 
 @Component({
   selector: 'app-import-check',
-  templateUrl: './import-check.component.html',
-  styleUrls: ['./import-check.component.scss']
+  template: `
+      <p>
+          import-check works!
+      </p>
+  `,
 })
 export class ImportCheckComponent implements OnInit {
 

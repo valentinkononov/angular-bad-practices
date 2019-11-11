@@ -8,8 +8,12 @@ export interface ItemData {
 
 @Component({
   selector: 'app-iterate-item',
-  templateUrl: './iterate-item.component.html',
-  styleUrls: ['./iterate-item.component.scss']
+  template: `
+      <div>
+          <div>{{ data.name }}</div>
+          <div>{{ data.description }}</div>
+      </div>
+  `,
 })
 export class IterateItemComponent implements OnInit, OnDestroy {
 

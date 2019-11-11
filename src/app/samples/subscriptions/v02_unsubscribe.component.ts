@@ -1,13 +1,20 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { TimerService } from '../services/timer.service';
+import { TimerService } from '../../services/timer.service';
 
 @Component({
   selector: 'app-subscription02',
-  templateUrl: './subscription02.component.html',
-  styleUrls: ['./subscription02.component.scss']
+  template: `
+      <p>
+          <strong>Straight Unsubscribe</strong>
+          Straight unsubscribe, no leaks, cool behavior. But we should necessary do it Manually for each subscription in each component
+      </p>
+      <div>
+          Subscription result: {{ result }}
+      </div>
+  `,
 })
-export class Subscription02Component implements OnInit, OnDestroy {
+export class V02_unsubscribeComponent implements OnInit, OnDestroy {
 
   subscription: Subscription;
   result = 0;

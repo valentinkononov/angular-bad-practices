@@ -1,10 +1,22 @@
 import { Component, OnInit } from '@angular/core';
-import { ItemData } from '../iterate-item/iterate-item.component';
+import { ItemData } from './iterate-item.component';
 
 @Component({
   selector: 'app-iterate03',
-  templateUrl: './iterate03.component.html',
-  styleUrls: ['./iterate03.component.scss']
+  template: `
+      <div>
+          <button type="button" (click)="changeCollection()">Change Collection</button>
+          <div *ngFor="let item of items; trackBy: trackByFn">
+              <!--<app-expandable [label]="getLabel(item)" [expanded]="false">-->
+              <!--<app-iterate-item [data]="item"></app-iterate-item>-->
+              <!--</app-expandable>-->
+              <app-expandable [label]="item.id | label" [expanded]="false">
+                  <app-iterate-item [data]="item"></app-iterate-item>
+              </app-expandable>
+          </div>
+      </div>
+
+  `,
 })
 export class Iterate03Component implements OnInit {
 

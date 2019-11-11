@@ -2,14 +2,20 @@
   Welcome to {{ title }}!
 </h1>
 <!-- <app-any></app-any> -->
-<!-- <app-subscription01></app-subscription01> -->
+<!-- <app-v01_subscribe_only></app-v01_subscribe_only> -->
 
-<button type="button" (click)="navigateAny()">Navigate Any</button>
-<button type="button" (click)="navigateSubscription01()">Navigate Subscription01</button>
-<button type="button" (click)="navigateSubscription02()">Navigate Subscription02</button>
-<button type="button" (click)="navigateSubscription03()">Navigate Subscription03</button>
-<button type="button" (click)="navigateSubscription04()">Navigate Subscription04</button>
-<button type="button" (click)="navigateSubscription05()">Navigate Subscription05</button>
-<button type="button" (click)="navigateIterate03()">Navigate Iterate03</button>
+<p>
+  Please open browser developer console (F12 or option + cmd + I) to observe event logs and how subscription is working even after navigation to other components
+</p>
+
+<button type="button" (click)="navigate('home')">Navigate Home</button>
+<button type="button" (click)="navigate('any')">Navigate Any</button>
+<button type="button" (click)="navigate('v01_subscribe_only')">Navigate Subscribe Only</button>
+<button type="button" (click)="navigate('v02_unsubscribe')">Navigate Unsubscribe</button>
+<button type="button" (click)="navigate('v03_take_while')">Navigate Take While</button>
+<button type="button" (click)="navigate('v04_take_until')">Navigate Take Until</button>
+<button type="button" (click)="navigate('v05_async_pipe')">Navigate Async Pipe</button>
+<button type="button" (click)="navigate('v06_until_destroyed')">Navigate Until Destroyed</button>
+<button type="button" (click)="navigate('iterate03')">Navigate Iterate03</button>
 
 <router-outlet></router-outlet>

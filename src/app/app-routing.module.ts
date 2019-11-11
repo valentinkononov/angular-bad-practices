@@ -9,6 +9,7 @@ import { V05_async_pipeComponent } from './samples/subscriptions/v05_async_pipe.
 import { V06_until_destroyedComponent } from './samples/subscriptions/v06_until_destroyed.component';
 import { Iterate03Component } from './samples/iterate/iterate03.component';
 import { HomeComponent } from './samples/home.component';
+import {V07_async_template_multipleComponent} from './samples/subscriptions/v07_async_template_multiple.component';
 
 const routes: Routes = [
   {
@@ -46,6 +47,10 @@ const routes: Routes = [
   {
     path: 'v06_until_destroyed',
     component: V06_until_destroyedComponent,
+  },
+  {
+    path: 'v07_async_template_multiple',
+    component: V07_async_template_multipleComponent,
   },
   {
     path: 'iterate03',

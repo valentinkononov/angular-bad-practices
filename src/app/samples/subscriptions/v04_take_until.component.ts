@@ -9,6 +9,15 @@ import { TimerService } from '../../services/timer.service';
       <p>
           <strong>Take Until</strong>
           Cool rxjs way to unsubscribe. Issue is boilerplate code for it.
+
+          <br/>
+          <strong>Proc</strong>
+           - works, no leaks
+           - 
+          <br/>
+          <strong>Cons</strong>
+           - additional code 
+           - doesn't work with OnPush, need to use 'markForCheck'
       </p>
       <div>
           Subscription result: {{ result }}

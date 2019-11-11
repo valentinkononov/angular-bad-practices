@@ -22,22 +22,33 @@ import { TimerService } from '../../services/timer.service';
            - need to unwrap result in template 
       </p>
       <div>
-          Subscription result: {{ result$ | async }}
+          <ng-container *ngIf="{
+            item1: result1$ | async,
+            item2: result2$ | async
+          } as data">
+              Subscription result: {{ data.item1 }} | {{ data.item2 }}
+          </ng-container>
       </div>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class V05_async_pipeComponent implements OnInit, OnDestroy {
+export class V07_async_template_multipleComponent implements OnInit, OnDestroy {
 
-  result$: Observable<number>;
+  result1$: Observable<number>;
+  result2$: Observable<number>;
 
   constructor(private timerService: TimerService) { }
 
   ngOnInit() {
     console.log('Initialized');
-    this.result$ = this.timerService.initTimer()
+    this.result1$ = this.timerService.initTimer()
       .pipe(tap(x => {
-        console.log(x);
+        console.log(`Timer 1: ${x}`);
+      }));
+
+    this.result2$ = this.timerService.initTimer2()
+      .pipe(tap(x => {
+        console.log(`Timer 2: ${x}`);
       }));
   }
 

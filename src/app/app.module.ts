@@ -17,6 +17,7 @@ import { IterateItemComponent } from './samples/iterate/iterate-item.component';
 import { ExpandableComponent } from './samples/iterate/expandable.component';
 import { LabelPipe } from './pipes/label.pipe';
 import {HomeComponent} from './samples/home.component';
+import {V07_async_template_multipleComponent} from './samples/subscriptions/v07_async_template_multiple.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import {HomeComponent} from './samples/home.component';
     V04_take_untilComponent,
     V05_async_pipeComponent,
     V06_until_destroyedComponent,
+    V07_async_template_multipleComponent,
     ImportCheckComponent,
     ImportCheckComponent,
     Iterate03Component,

@@ -1,10 +1,10 @@
 import { Component, OnInit, OnDestroy, ChangeDetectionStrategy } from '@angular/core';
 import { Observable } from 'rxjs';
-import { tap } from 'rxjs/operators';
+import {map, tap} from 'rxjs/operators';
 import { TimerService } from '../../services/timer.service';
 
 @Component({
-  selector: 'app-subscription07',
+  selector: 'app-subscription09',
   template: `
       <p>
           <strong>Async Pipe</strong>
@@ -15,41 +15,35 @@ import { TimerService } from '../../services/timer.service';
            - works, no leaks
            - minimal amount of code
            - works with OnPush change detection
+           - can use values in different template places
+           - can use in TS code
           <br/>
           <strong>Cons:</strong>
-           - cannot use as is in several places of template as is, need to wrap with ngIf
-           - cannot use in TS code
-           - need to unwrap result in template 
+           - we doubled amount of calls to observable. in case of http - it would double traffic
       </p>
       <div>
-          <ng-container *ngIf="{
-            item1: result1$ | async,
-            item2: result2$ | async
-          } as data">
-              Subscription result: {{ data.item1 }} | {{ data.item2 }}
-          </ng-container>
+          Subscription result: {{ id$ | async }} | {{ count$ | async }}
       </div>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class V07_async_template_multipleComponent implements OnInit, OnDestroy {
+export class V09_async_template_propsComponent implements OnInit, OnDestroy {
 
-  result1$: Observable<number>;
-  result2$: Observable<number>;
+  result$: Observable<{ id: number, count: number}>;
+  id$: Observable<number>;
+  count$: Observable<number>;
 
   constructor(private timerService: TimerService) { }
 
   ngOnInit() {
     console.log('Initialized');
-    this.result1$ = this.timerService.initTimer()
+    this.result$ = this.timerService.initTimerForObject()
       .pipe(tap(x => {
-        console.log(`Timer 1: ${x}`);
+        console.log(`Timer: ${x}`);
       }));
 
-    this.result2$ = this.timerService.initTimer2()
-      .pipe(tap(x => {
-        console.log(`Timer 2: ${x}`);
-      }));
+    this.id$ = this.result$.pipe(map(x => x.id));
+    this.count$ = this.result$.pipe(map(x => x.count));
   }
 
   ngOnDestroy() {

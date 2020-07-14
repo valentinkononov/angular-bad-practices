@@ -1,5 +1,5 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
-import { TimerService } from '../../services/timer.service';
+import {ChangeDetectionStrategy, Component, OnDestroy, OnInit} from '@angular/core';
+import {TimerService} from '../../services/timer.service';
 
 @Component({
   selector: 'app-subscription01',
@@ -12,6 +12,7 @@ import { TimerService } from '../../services/timer.service';
           Subscription result: {{ result }}
       </div>
   `,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class V01_subscribe_onlyComponent implements OnInit, OnDestroy {
 

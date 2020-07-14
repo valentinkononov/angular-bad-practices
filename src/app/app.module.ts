@@ -16,8 +16,11 @@ import { Iterate03Component } from './samples/iterate/iterate03.component';
 import { IterateItemComponent } from './samples/iterate/iterate-item.component';
 import { ExpandableComponent } from './samples/iterate/expandable.component';
 import { LabelPipe } from './pipes/label.pipe';
-import {HomeComponent} from './samples/home.component';
-import {V07_async_template_multipleComponent} from './samples/subscriptions/v07_async_template_multiple.component';
+import { HomeComponent } from './samples/home.component';
+import { V07_async_template_multipleComponent } from './samples/subscriptions/v07_async_template_multiple.component';
+import { V08_async_endless_loopComponent } from './samples/subscriptions/v08_async_endless_loop.component';
+import { V09_async_template_propsComponent } from './samples/subscriptions/v09_async_template_props.component';
+import { V10_async_shareComponent } from './samples/subscriptions/v10_async_share.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +34,9 @@ import {V07_async_template_multipleComponent} from './samples/subscriptions/v07_
     V05_async_pipeComponent,
     V06_until_destroyedComponent,
     V07_async_template_multipleComponent,
+    V08_async_endless_loopComponent,
+    V09_async_template_propsComponent,
+    V10_async_shareComponent,
     ImportCheckComponent,
     ImportCheckComponent,
     Iterate03Component,

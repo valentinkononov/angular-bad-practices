@@ -9,7 +9,10 @@ import { V05_async_pipeComponent } from './samples/subscriptions/v05_async_pipe.
 import { V06_until_destroyedComponent } from './samples/subscriptions/v06_until_destroyed.component';
 import { Iterate03Component } from './samples/iterate/iterate03.component';
 import { HomeComponent } from './samples/home.component';
-import {V07_async_template_multipleComponent} from './samples/subscriptions/v07_async_template_multiple.component';
+import { V07_async_template_multipleComponent } from './samples/subscriptions/v07_async_template_multiple.component';
+import { V08_async_endless_loopComponent } from './samples/subscriptions/v08_async_endless_loop.component';
+import { V09_async_template_propsComponent } from './samples/subscriptions/v09_async_template_props.component';
+import {V10_async_shareComponent} from "./samples/subscriptions/v10_async_share.component";
 
 const routes: Routes = [
   {
@@ -51,6 +54,18 @@ const routes: Routes = [
   {
     path: 'v07_async_template_multiple',
     component: V07_async_template_multipleComponent,
+  },
+  {
+    path: 'v08_async_endless_loop',
+    component: V08_async_endless_loopComponent,
+  },
+  {
+    path: 'v09_async_template_props',
+    component: V09_async_template_propsComponent,
+  },
+  {
+    path: 'v10_async_share',
+    component: V10_async_shareComponent,
   },
   {
     path: 'iterate03',
